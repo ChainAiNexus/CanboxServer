@@ -66,7 +66,7 @@ public class UserController {
             boolean flag = false;
             //    
             do {
-                //                       
+                // optimization
                 flag = stringRedisTemplate.opsForValue().setIfAbsent(key, "install");
             } while (!flag);
             stringRedisTemplate.expire(key, 10, TimeUnit.SECONDS);
